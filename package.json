@@ -1,0 +1,39 @@
+{
+    "name": "black-hole-portfolio",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "homepage": "https://RAYXSTUDIOZGAMES.github.io/black-hole-portfolio",
+    "dependencies": {
+        "@react-three/drei": "^9.0.0",
+        "@react-three/fiber": "^8.0.0",
+        "@react-three/postprocessing": "^2.16.0",
+        "framer-motion": "^10.0.0",
+        "maath": "^0.10.0",
+        "postprocessing": "^6.33.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "^5.5.0",
+        "react-router-dom": "^6.0.0",
+        "three": "^0.160.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
+        "@vitejs/plugin-react": "^4.0.0",
+        "eslint": "^8.0.0",
+        "eslint-plugin-react": "^7.0.0",
+        "eslint-plugin-react-hooks": "^4.0.0",
+        "eslint-plugin-react-refresh": "^0.4.0",
+        "gh-pages": "^6.3.0",
+        "vite": "^5.0.0"
+    }
+}

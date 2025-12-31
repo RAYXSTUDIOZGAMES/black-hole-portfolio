@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;500;700&family=Orbitron:wght@400;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #000000;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Loader Animation */
+.loader-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-hole-loader {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0 0 30px 10px rgba(255, 69, 0, 0.6), inset 0 0 20px 5px rgba(255, 140, 0, 0.8);
+    /* Orange Theme */
+    position: relative;
+    z-index: 2;
+    animation: pulse-blackhole 2s infinite ease-in-out;
+}
+
+.accretion-disk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160%;
+    height: 160%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0%, #ff4500 20%, #ff8c00 40%, transparent 60%);
+    animation: spin-disk 1s linear infinite;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+@keyframes spin-disk {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse-blackhole {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 30px 10px rgba(255, 69, 0, 0.6);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px 15px rgba(255, 69, 0, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px 10px rgba(255, 69, 0, 0.6);
+    }
+}
+
+/* INSANE MAGMA TEXT */
+.insane-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    letter-spacing: 0.1em;
+    text-shadow:
+        0 0 10px rgba(255, 100, 0, 0.8),
+        0 0 20px rgba(255, 100, 0, 0.5),
+        0 0 40px rgba(255, 69, 0, 0.3);
+}
+
+.insane-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #fff 0%, #ff8c00 40%, #ff0000 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+    animation: jitter 3s infinite;
+}
+
+/* Removed the black-bg pseudo element */
+
+@keyframes jitter {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-1px, -1px);
+    }
+
+    20% {
+        transform: translate(1px, 1px);
+    }
+
+    30% {
+        transform: translate(-1px, 1px);
+    }
+
+    40% {
+        transform: translate(1px, -1px);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+}
+
+.gradient-loader-text {
+    background: linear-gradient(to right, #ffff00, #ff8c00, #ff0080);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+    animation: hue-rotate 3s infinite linear;
+}
+
+@keyframes hue-rotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(30deg);
+    }
+}
+
+/* Scanline Effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.3) 3px,
+            rgba(0, 0, 0, 0.3) 4px);
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+}
+
+/* Social Buttons */
+.social-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    perspective: 1000px;
+}
+
+.social-btn {
+    font-size: 1.5rem;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 69, 0, 0.3);
+    /* Orange Border */
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.1);
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(255, 69, 0, 0.2);
+    border-color: #ff4500;
+    box-shadow: 0 0 20px #ff4500, 0 0 40px #ff4500;
+    color: white;
+}
