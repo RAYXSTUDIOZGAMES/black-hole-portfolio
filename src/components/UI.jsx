@@ -1,18 +1,25 @@
 import './UI.css'
 import { FaDiscord, FaYoutube, FaInstagram, FaTiktok } from 'react-icons/fa'
 
-function Socials() {
+function Socials({ onRedirect }) {
+    const links = {
+        discord: "https://discord.com/invite/t6hvHaunkT",
+        youtube: "https://youtube.com/@bmreditz-1?si=T-HSKNFw_RqSn23d",
+        instagram: "https://www.instagram.com/bmr.ez/",
+        tiktok: "https://www.tiktok.com/@bmreditz1?is_from_webapp=1&sender_device=pc"
+    }
+
     return (
         <div className="social-container" style={{ pointerEvents: 'auto' }}>
-            <a href="#" className="social-btn"><FaDiscord /></a>
-            <a href="#" className="social-btn"><FaYoutube /></a>
-            <a href="#" className="social-btn"><FaInstagram /></a>
-            <a href="#" className="social-btn"><FaTiktok /></a>
+            <div onClick={() => onRedirect(links.discord)} className="social-btn" style={{ cursor: 'pointer' }}><FaDiscord /></div>
+            <div onClick={() => onRedirect(links.youtube)} className="social-btn" style={{ cursor: 'pointer' }}><FaYoutube /></div>
+            <div onClick={() => onRedirect(links.instagram)} className="social-btn" style={{ cursor: 'pointer' }}><FaInstagram /></div>
+            <div onClick={() => onRedirect(links.tiktok)} className="social-btn" style={{ cursor: 'pointer' }}><FaTiktok /></div>
         </div>
     )
 }
 
-export default function UI() {
+export default function UI({ onRedirect }) {
     return (
         <div className="ui-container" style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
 
@@ -70,7 +77,7 @@ export default function UI() {
             {/* Footer / Status */}
             <footer className="ui-footer" style={{ position: 'absolute', bottom: '2rem', left: 0, width: '100%', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
 
-                <Socials />
+                <Socials onRedirect={onRedirect} />
 
                 <div style={{ marginBottom: '0.5rem', fontSize: '0.7rem', opacity: 0.6, letterSpacing: '2px', fontWeight: 'bold', color: '#ff8c00' }}>
                     &copy; BMR ALL RIGHTS RESERVED

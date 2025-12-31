@@ -3,12 +3,8 @@
 Follow these steps to put your website online for free!
 
 ## Step 1: Create a Repository on GitHub
-1. Go to [github.com](https://github.com/) and sign in (or create an account).
-2. Click the **+** icon in the top right and select **New repository**.
-3. Name the repository: `black-hole-portfolio`
-4. **Important**: Leave "Public" selected.
-5. **Important**: Do NOT check "Add a README file", "Add .gitignore", or "Choose a license". The repository must be empty.
-6. Click **Create repository**.
+**You have already done this step!**
+Your repository URL is: `https://github.com/RAYXSTUDIOZGAMES/black-hole-portfolio.git`
 
 ## Step 2: Configure Git (One Time Setup)
 If you haven't used Git on this computer before, you need to tell it who you are. Run these two commands in your terminal (replace with your info):
@@ -22,7 +18,7 @@ git config --global user.name "Your Name"
 Copy and paste these commands into your terminal one by one:
 
 ```powershell
-# 1. Initialize the git folder
+# 1. Initialize the git folder (if not already done)
 git init
 
 # 2. Add all your files
@@ -31,8 +27,8 @@ git add .
 # 3. Save your changes (Commit)
 git commit -m "First commit: Insane Black Hole Portfolio"
 
-# 4. Link to GitHub (REPLACE <YOUR-USERNAME> with your actual GitHub username!)
-git remote add origin https://github.com/<YOUR-USERNAME>/black-hole-portfolio.git
+# 4. Link to GitHub (Your actual repo URL)
+git remote add origin https://github.com/RAYXSTUDIOZGAMES/black-hole-portfolio.git
 
 # 5. Send the code to GitHub
 git branch -M main
@@ -46,12 +42,10 @@ Now that the code is on GitHub, run this command to build and publish the websit
 npm run deploy
 ```
 
-## Step 5: Update Your Settings
-1. Open `vite.config.js` in your code editor.
-   - Ensure `base: '/black-hole-portfolio/'` matches your repository name.
-2. Open `package.json`.
-   - Update `"homepage": "https://<YOUR-USERNAME>.github.io/black-hole-portfolio"` with your real username.
+## Step 5: Verification
+1. `vite.config.js` is already set to `base: '/black-hole-portfolio/'`.
+2. `package.json` needs to be updated with your username if not already done.
 
 ## Step 6: View Your Site!
 After running `npm run deploy`, wait about 2 minutes. Your site will be live at:
-`https://<YOUR-USERNAME>.github.io/black-hole-portfolio/`
+https://RAYXSTUDIOZGAMES.github.io/black-hole-portfolio/
